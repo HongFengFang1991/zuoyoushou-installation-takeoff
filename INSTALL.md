@@ -1,70 +1,37 @@
-# 服务商安装说明
+# 安装与第一次验证
 
-> 最后更新：2026-11-05 · 固定版本：v1.4.3
+> 最后更新：2026-11-05 · 技能版本：v1.4.3
 
-本仓库：`HongFengFang1991/zuoyoushou-installation-takeoff`。以下指令可直接复制给智能体。
+## 给服务商：复制这一句话
 
-## WorkBuddy：复制给智能体
-
-先在 WorkBuddy 打开一个服务商本地工作目录，再发送：
+在 WorkBuddy 中发送：
 
 ```text
-请把 https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff 的 installation-takeoff 技能安装到当前 WorkBuddy 项目。
-固定使用 v1.4.3 标签，读取该版本 INSTALL.md。
-下载该版本完整 skills/installation-takeoff 目录，安装到当前项目的 .codebuddy/skills/installation-takeoff。
-保留 scripts、references、assets、agents 和 SKILL.md，按同版本 release-manifest.json 验证全部文件 SHA256。
-如已有旧版，先备份到技能扫描目录之外，再替换；不要修改客户图纸、已有报价项目和我的规则/价格档案。
-安装后读回 SKILL.md，报告版本、实际目录、完整性检查和 Python 3.11+ 是否可用。
-仅报告实际完成的步骤，暂不运行真实客户图纸。如果不能访问 GitHub、写入或注册技能，说明具体原因并给出该版本 ZIP 导入入口，不要反复重试。
+请安装这个地址的技能：https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff
 ```
 
-项目级安装只对该项目生效，不代表所有 WorkBuddy 任务都已安装。没有本地项目目录时，使用下面的 ZIP 导入方式。
+用户只需按提示选择本地工作文件夹。下面的步骤交给智能体执行。
 
-本地文件校验只能检查下载完整性，不证明模型识图准确。若缺少 Python，在安装好 Python 3.11+ 后继续；不要自动改系统全局 Python 包。依赖准备遵循技能 `references/runtime.md`，进入单独的验证项目运行 bootstrap；必须完成读写、转图和嵌图导出预检后再处理整套图纸。
+## 给执行安装的智能体
 
-## WorkBuddy：ZIP 导入兜底
+1. 仓库为 `https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff`。服务商的一句话入口不要求填写分支或版本：按本页当前说明安装 v1.4.3 技能，先解析 `v1.4.3` 标签对应的实际 commit SHA，在本次下载中固定该 SHA，避免混用不同提交文件。2026-11-05发布核对时标签对应 `180822adccb98beb4f939b5f0c29e3801235f8bc`。
+2. 当前已发布 [v1.4.3 Release](https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff/releases/tag/v1.4.3)，可下载 [WorkBuddy 专用安装包](https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff/releases/download/v1.4.3/installation-takeoff-workbuddy-v1.4.3.zip)。安装动作遵循本页最新流程，技能文件与校验清单使用同一固定提交。标签或下载入口无法访问时先说明具体错误，不静默切换 main；用户明确同意使用开发版时才解析 main 并固定提交。
+3. 下载同一提交下完整的 `skills/installation-takeoff/` 目录；保留 SKILL.md、scripts、references、assets、agents。不能只复制入口文件。按同一提交 `release-manifest.json` 的 `source_files` 校验技能目录内全部列明文件的 SHA256；字段路径相对于技能根目录，包校验值仅用于实际存在的对应 ZIP。
+4. 项目安装位置为用户确认的本地项目下 `.codebuddy/skills/installation-takeoff`。项目未打开或不能写入时，先引导选定本地工作目录。不臆测用户目录，不自动扩大权限。
+5. 已有同名技能时，先把旧版备份到技能扫描目录之外，再替换；保留客户图纸、已有报价工程与规则/价格档案。
+6. 读回 SKILL.md，报告实际安装路径、版本、提交 SHA、校验结果与 Python 3.11+ 可用性。缺 Python 时说明安装方式，不改系统全局包。
+7. 在技能目录之外创建单独验证项目，严格按 `references/runtime.md` 执行 bootstrap 和预检。依赖安装在该项目的环境中。
+8. 用随包合成示例验证实际图片可见、尺寸归属可核对、能完成识图存档与带图 Excel 导出。检查工作簿可打开、包含「报价明细」「报价汇总」、缩略图对应产品、来源页码可追溯。只报告实际产生且存在的文件路径。
+9. 分别报告安装、环境、视觉、导出成功或失败；下载成功不等于完整验证通过。不在安装阶段处理客户图纸。
+10. GitHub不可访问、注册失败或工具能力不足时，明确具体阻塞。不得虚构已安装或已导出；不反复重试。若存在已发布且可访问的专用 ZIP，可提供准确导入入口。WorkBuddy手动导入入口为「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」，该入口以客户端版本为准。
 
-1. 打开 `https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff/releases/tag/v1.4.3`。
-2. 下载 `installation-takeoff-workbuddy-v1.4.3.zip`，不要选 GitHub 自动生成的整个仓库 Source code ZIP。
-3. WorkBuddy「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」导入此 ZIP。
-4. 新建任务，选中技能，让智能体读取 SKILL.md 并报告版本；再用合成示例做预检。
+WorkBuddy官方支持ZIP技能导入；对话检索安装技能市场与从外部仓库复制完整本地技能不是同一机制。以上自动流程要求智能体具备联网、文件写入及本地执行能力。[官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)
 
-WorkBuddy 包内 SKILL.md 位于 ZIP 根目录。GitHub 网络不通时，可由发布者分发同一个 ZIP，并核对 release-manifest.json 中的 SHA256；不要改用来历不明的重打包版本。
+## 豆包工作模式
 
-## Codex：复制给智能体
+先做能力检查，不宣称已完成适配。不把 WorkBuddy 安装路径、界面入口或自定义模型配置套用到豆包。豆包若不支持该版本的外部技能安装、图片工具、Python或所需依赖，说明缺口并停止完整算量承诺。[官方 Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
 
-```text
-请使用 skill-installer 安装 https://github.com/HongFengFang1991/zuoyoushou-installation-takeoff 中的 skills/installation-takeoff，固定版本 v1.4.3。
-先读取该版本 INSTALL.md，按 release-manifest.json 校验文件完整性。
-已有旧版时，先备份到技能扫描目录之外，不动已有报价工程和自定义规则。
-完成后报告技能版本、安装路径和校验结果，告诉我何时可调用。暂不计算客户图纸。
-```
+## 更新与接续
 
-由 Codex 使用自己实际安装的 skill-installer 路径运行：
+升级记录实际提交与技能版本；不在已有单据中静默升级。安装目录用于保存技能，本单项目目录保存图纸快照、状态与导出，两者分开。升级不覆盖已有项目，后续仅按技能支持的迁移方式处理。
 
-```text
-python "<skill-installer目录>/scripts/install-skill-from-github.py" --repo HongFengFang1991/zuoyoushou-installation-takeoff --path skills/installation-takeoff --ref v1.4.3
-```
-
-默认安装到 `$CODEX_HOME/skills/installation-takeoff`（未配置时为 `~/.codex/skills/installation-takeoff`）。安装器遇到同名目录会停止；先在扫描目录之外保存备份，再安装，失败可恢复。安装后的技能在下一轮可用。
-
-## 安装后的第一次验证
-
-```text
-使用 installation-takeoff v1.4.3。先在技能目录以外新建一个“安装验证”项目，按照 runtime.md 运行环境预检。
-使用随包合成图检查能否实际看清尺寸，跑一次识图算量和带产品缩略图的 Excel 导出。
-验证工作簿可以打开、两张页签存在、页码可追溯、缩略图对应产品、数量可复算。
-告诉我成功项、失败项和真实生成文件路径，不把下载成功当作验证成功，不使用客户图纸。
-```
-
-## 更新与访问
-
-- 服务商测试与报价记录使用固定版本；升级时指定新标签，不静默跟随 main。
-- 技能版本、模型界面全名和自定义规则应随本单记录。
-- 私有仓库需要每位使用者的访问权限和本机认证；不要把发布者账号令牌写进指令或技能包。
-- 当前发布无跨模型同精度保证；看到尺寸冲突应保留复核状态，不能为了统一结果抄用其他模型的结论。
-
-## 官方操作参考
-
-- [WorkBuddy 技能导入](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)
-- [WorkBuddy 项目级 .codebuddy/skills 配置](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Project)
