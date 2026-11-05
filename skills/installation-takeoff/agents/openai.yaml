@@ -1,0 +1,4 @@
+interface:
+  display_name: "全屋定制安装识图算量"
+  short_description: "按图纸清点安装工程量，支持业务规则定制与口述补价，生成可复核清单"
+  default_prompt: "使用 $installation-takeoff 按标准规则识别这些图纸，先算数量、单价留空，待复核项并入明细、标明疑点并按当前资料暂计。"

@@ -1,0 +1,4 @@
+# Tested portable runtime, Python 3.11+; install into a project venv, never global.
+pypdfium2==5.14.0
+Pillow==13.0.0
+XlsxWriter==3.3.1

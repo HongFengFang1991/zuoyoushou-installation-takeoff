@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "name": "合成示例逐实体参考（对应 assets/example-takeoff.json）",
+  "reference_kind": "synthetic_explicit_reference",
+  "source_fixture": "example-takeoff.json",
+  "note": "人工明确填写的合成字段和计量期望；没有运行视觉模型，不代表真实识图准确率。只比较本文件列明的事实、分类、数量和复核状态，不比较金额总和。",
+  "tolerances": {
+    "dimension_mm": 0,
+    "quantity": 0.0001
+  },
+  "cases": [
+    {
+      "id": "Q001",
+      "bucket": "rows",
+      "product_type": "cabinet",
+      "length_mm": 3674,
+      "height_mm": 2384,
+      "quantity": 8.759,
+      "unit": "平米"
+    },
+    {
+      "id": "Q002",
+      "bucket": "rows",
+      "product_type": "desk",
+      "length_mm": 5500,
+      "repeat_count": 2,
+      "quantity": 11,
+      "unit": "米"
+    },
+    {
+      "id": "Q003",
+      "bucket": "rows",
+      "product_type": "tatami",
+      "length_mm": 1955,
+      "depth_mm": 1210,
+      "quantity": 2.366,
+      "unit": "平米"
+    },
+    {
+      "id": "Q004",
+      "bucket": "rows",
+      "product_type": "cabinet",
+      "length_mm": 800,
+      "height_mm": 900,
+      "quantity": 1,
+      "unit": "米"
+    },
+    {
+      "id": "Q005",
+      "bucket": "review",
+      "product_type": "cabinet",
+      "length_mm": 2400,
+      "height_mm": null,
+      "quantity": null
+    },
+    {
+      "id": "Q006",
+      "bucket": "rows",
+      "product_type": "drawer",
+      "count": 7,
+      "parent_id": "Q001",
+      "quantity": 7,
+      "unit": "个"
+    },
+    {
+      "id": "Q007",
+      "bucket": "rows",
+      "product_type": "light_strip",
+      "count": 6,
+      "parent_id": "Q001",
+      "quantity": 6,
+      "unit": "条"
+    }
+  ]
+}

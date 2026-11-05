@@ -1,0 +1,509 @@
+{
+  "batch_id": "synthetic-b001",
+  "reason": "仅供合成演示，必须按实际原图替换",
+  "pages": [
+    {
+      "file": "example-1.png",
+      "page": 1,
+      "page_type": "product_drawing",
+      "reason": "合成产品图",
+      "views": [
+        {
+          "view_id": "A",
+          "disposition": "measured",
+          "item_ids": [
+            "Q001",
+            "Q006",
+            "Q007"
+          ],
+          "reason": "合成产品图及配件标注"
+        }
+      ]
+    },
+    {
+      "file": "example-2.png",
+      "page": 1,
+      "page_type": "product_drawing",
+      "reason": "合成产品图",
+      "views": [
+        {
+          "view_id": "A",
+          "disposition": "measured",
+          "item_ids": [
+            "Q002"
+          ],
+          "reason": "合成产品图及配件标注"
+        }
+      ]
+    },
+    {
+      "file": "example-3.png",
+      "page": 1,
+      "page_type": "product_drawing",
+      "reason": "合成产品图",
+      "views": [
+        {
+          "view_id": "A",
+          "disposition": "measured",
+          "item_ids": [
+            "Q003"
+          ],
+          "reason": "合成产品图及配件标注"
+        }
+      ]
+    },
+    {
+      "file": "example-4.png",
+      "page": 1,
+      "page_type": "product_drawing",
+      "reason": "合成产品图",
+      "views": [
+        {
+          "view_id": "A",
+          "disposition": "measured",
+          "item_ids": [
+            "Q004"
+          ],
+          "reason": "合成产品图及配件标注"
+        }
+      ]
+    },
+    {
+      "file": "example-5.png",
+      "page": 1,
+      "page_type": "product_drawing",
+      "reason": "合成产品图",
+      "views": [
+        {
+          "view_id": "A",
+          "disposition": "measured",
+          "item_ids": [
+            "Q005"
+          ],
+          "reason": "合成产品图及配件标注"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "Q001",
+      "instance_key": "C001",
+      "product_type": "cabinet",
+      "name": "餐边柜",
+      "space": "合成演示",
+      "length_mm": 3674,
+      "height_mm": 2384,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-1.png",
+          "page": 1,
+          "region": "中央产品视图",
+          "text": "餐边柜 C001；总宽3674，总高2384；7处托底抽；6处加灯",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "evidence": {
+        "basis": "explicit_dimensions",
+        "boundary": "clear",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "dimension_readings": [
+          {
+            "field": "length_mm",
+            "value_mm": 3674,
+            "source_index": 0,
+            "text": "3674",
+            "region": "合成图标注"
+          },
+          {
+            "field": "height_mm",
+            "value_mm": 2384,
+            "source_index": 0,
+            "text": "2384",
+            "region": "合成图标注"
+          }
+        ],
+        "chain_check": [
+          {
+            "field": "length_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          },
+          {
+            "field": "height_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          }
+        ],
+        "unresolved_issues": []
+      },
+      "cabinet_subtype": "sideboard",
+      "accessory_checks": {
+        "checked_types": [
+          "drawer",
+          "light_strip",
+          "pull_basket",
+          "dish_basket",
+          "seasoning_basket"
+        ],
+        "present": {
+          "drawer": [
+            "Q006"
+          ],
+          "light_strip": [
+            "Q007"
+          ]
+        },
+        "unresolved": {},
+        "note": "合成图已列明配置；其余未发现标注或候选"
+      }
+    },
+    {
+      "id": "Q006",
+      "instance_key": "C001-drawer",
+      "parent_id": "Q001",
+      "product_type": "drawer",
+      "name": "托底抽",
+      "space": "合成演示",
+      "count": 7,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-1.png",
+          "page": 1,
+          "region": "柜内配置标注",
+          "text": "托底抽明确标注7处",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "evidence": {
+        "basis": "explicit_count",
+        "boundary": "not_applicable",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "count_marks": [
+          {
+            "label": "托底抽明确标注7处",
+            "quantity": 7,
+            "region": "柜内配置标注",
+            "source_index": 0
+          }
+        ],
+        "dimension_readings": [],
+        "chain_check": [],
+        "unresolved_issues": []
+      }
+    },
+    {
+      "id": "Q007",
+      "instance_key": "C001-light_strip",
+      "parent_id": "Q001",
+      "product_type": "light_strip",
+      "name": "灯带",
+      "space": "合成演示",
+      "count": 6,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-1.png",
+          "page": 1,
+          "region": "柜内配置标注",
+          "text": "灯带明确标注6处",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "evidence": {
+        "basis": "explicit_count",
+        "boundary": "not_applicable",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "count_marks": [
+          {
+            "label": "灯带明确标注6处",
+            "quantity": 6,
+            "region": "柜内配置标注",
+            "source_index": 0
+          }
+        ],
+        "dimension_readings": [],
+        "chain_check": [],
+        "unresolved_issues": []
+      }
+    },
+    {
+      "id": "Q002",
+      "instance_key": "C002",
+      "product_type": "desk",
+      "name": "会议桌",
+      "space": "合成演示",
+      "length_mm": 5500,
+      "depth_mm": 1200,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-2.png",
+          "page": 1,
+          "region": "中央产品视图",
+          "text": "会议桌×2；俯视图，本图单件尺寸：长5500，宽1200",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "repeat_count": 2,
+      "repeat_evidence": "标题会议桌×2",
+      "evidence": {
+        "basis": "explicit_dimensions",
+        "boundary": "clear",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "dimension_readings": [
+          {
+            "field": "length_mm",
+            "value_mm": 5500,
+            "source_index": 0,
+            "text": "5500",
+            "region": "合成图标注"
+          },
+          {
+            "field": "depth_mm",
+            "value_mm": 1200,
+            "source_index": 0,
+            "text": "1200",
+            "region": "合成图标注"
+          }
+        ],
+        "chain_check": [
+          {
+            "field": "length_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          },
+          {
+            "field": "depth_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          }
+        ],
+        "unresolved_issues": []
+      }
+    },
+    {
+      "id": "Q003",
+      "instance_key": "C003",
+      "product_type": "tatami",
+      "name": "榻榻米",
+      "space": "合成演示",
+      "length_mm": 1955,
+      "height_mm": 1090,
+      "depth_mm": 1210,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-3.png",
+          "page": 1,
+          "region": "中央产品视图",
+          "text": "榻榻米俯视图：长1955，深1210；立面总高1090，不用于深度",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "evidence": {
+        "basis": "explicit_dimensions",
+        "boundary": "clear",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "dimension_readings": [
+          {
+            "field": "length_mm",
+            "value_mm": 1955,
+            "source_index": 0,
+            "text": "1955",
+            "region": "合成图标注"
+          },
+          {
+            "field": "height_mm",
+            "value_mm": 1090,
+            "source_index": 0,
+            "text": "1090",
+            "region": "合成图标注"
+          },
+          {
+            "field": "depth_mm",
+            "value_mm": 1210,
+            "source_index": 0,
+            "text": "1210",
+            "region": "合成图标注"
+          }
+        ],
+        "chain_check": [
+          {
+            "field": "length_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          },
+          {
+            "field": "height_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          },
+          {
+            "field": "depth_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          }
+        ],
+        "unresolved_issues": []
+      }
+    },
+    {
+      "id": "Q004",
+      "instance_key": "C004",
+      "product_type": "cabinet",
+      "name": "矮柜",
+      "space": "合成演示",
+      "length_mm": 800,
+      "height_mm": 900,
+      "confidence": 0.9,
+      "sources": [
+        {
+          "file": "example-4.png",
+          "page": 1,
+          "region": "中央产品视图",
+          "text": "普通矮柜正视图：宽800，高900；实际长0.8米",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "evidence": {
+        "basis": "explicit_dimensions",
+        "boundary": "clear",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "dimension_readings": [
+          {
+            "field": "length_mm",
+            "value_mm": 800,
+            "source_index": 0,
+            "text": "800",
+            "region": "合成图标注"
+          },
+          {
+            "field": "height_mm",
+            "value_mm": 900,
+            "source_index": 0,
+            "text": "900",
+            "region": "合成图标注"
+          }
+        ],
+        "chain_check": [
+          {
+            "field": "length_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          },
+          {
+            "field": "height_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          }
+        ],
+        "unresolved_issues": []
+      },
+      "cabinet_subtype": "ordinary",
+      "accessory_checks": {
+        "checked_types": [
+          "drawer",
+          "light_strip",
+          "pull_basket",
+          "dish_basket",
+          "seasoning_basket"
+        ],
+        "present": {},
+        "unresolved": {},
+        "note": "合成图已列明配置；其余未发现标注或候选"
+      }
+    },
+    {
+      "id": "Q005",
+      "instance_key": "C005",
+      "product_type": "cabinet",
+      "name": "衣柜待补高度",
+      "space": "合成演示",
+      "length_mm": 2400,
+      "height_mm": null,
+      "confidence": 0.4,
+      "sources": [
+        {
+          "file": "example-5.png",
+          "page": 1,
+          "region": "中央产品视图",
+          "text": "衣柜（高度待确认）；宽2400；总高度看不清，暂不算面积",
+          "role": "measurement"
+        }
+      ],
+      "unit_price": null,
+      "needs_review": true,
+      "review_reason": "高度模糊，请补总高或清晰局部图",
+      "evidence": {
+        "basis": "explicit_dimensions",
+        "boundary": "clear",
+        "note": "合成标注用于流程验证，不作真实报价",
+        "dimension_checks": [],
+        "adjustments": [],
+        "ambiguities": [],
+        "dimension_readings": [
+          {
+            "field": "length_mm",
+            "value_mm": 2400,
+            "source_index": 0,
+            "text": "2400",
+            "region": "合成图标注"
+          }
+        ],
+        "chain_check": [
+          {
+            "field": "length_mm",
+            "status": "not_present",
+            "reason": "合成图无分段尺寸"
+          }
+        ],
+        "unresolved_issues": [
+          {
+            "field": "height_mm",
+            "reason": "示例高度模糊"
+          }
+        ]
+      },
+      "cabinet_subtype": "ordinary",
+      "accessory_checks": {
+        "checked_types": [
+          "drawer",
+          "light_strip",
+          "pull_basket",
+          "dish_basket",
+          "seasoning_basket"
+        ],
+        "present": {},
+        "unresolved": {},
+        "note": "合成图已列明配置；其余未发现标注或候选"
+      }
+    }
+  ]
+}
